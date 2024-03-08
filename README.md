@@ -1,5 +1,5 @@
 
-                                          Steganography Utility
+## Steganography Utility
 
 This Python program provides a steganography utility using steghide for hiding data within images. It offers
 various functionalities such as encryption, decryption, and encoding passphrase into binary images.
