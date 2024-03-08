@@ -1,68 +1,57 @@
-# Steganography Utility
+==============================================================================================================
+                                          Steganography Utility
+==============================================================================================================
 
-This utility provides a set of functions to perform steganography operations using steghide. It allows you to embed and extract hidden data within image files using passwords or binary images.
+This Python program provides a steganography utility using steghide for hiding data within images. It offers
+various functionalities such as encryption, decryption, and encoding passphrase into binary images.
 
-## Setup Instructions
+--------------------------------------------------------------------------------------------------------------
 
-Before using this utility, ensure that you have the following dependencies installed:
+## Features:
 
-- [Steghide](https://github.com/StefanoDeVuono/steghide)
-- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
+1. **Encrypt using password:** Embeds data into an image using a passphrase.
+2. **Decrypt using password:** Extracts hidden data from an image using a passphrase.
+3. **Encrypt and print binary image:** Encrypts cover file and prints passphrase in a binary image.
+4. **Decrypt using binary image:** Extracts hidden data from an image using a binary image.
+5. **Help:** Display help information about the program.
 
-If these dependencies are not installed, the utility will attempt to install them automatically when executed.
+--------------------------------------------------------------------------------------------------------------
 
-## Usage
+## How to Use:
 
-### Encrypt using password (Option 1)
+1. Ensure you have Python installed on your system.
+2. Clone or download this repository to your local machine.
+3. Open a terminal or command prompt and navigate to the directory containing the program files.
+4. Run the program by executing `python steganography.py`.
+5. Follow the on-screen prompts to perform the desired steganography operation.
 
-This option embeds data into an image using a passphrase.
+--------------------------------------------------------------------------------------------------------------
 
-Usage:
-```python
-python steganography_utility.py
-```
+## Dependencies:
 
-### Decrypt using password (Option 2)
+- Python 3.x
+- Steghide
+- Tesseract-OCR
 
-This option extracts hidden data from an image using a passphrase.
+If not already installed, the program will attempt to install the required dependencies automatically.
 
-Usage:
-```python
-python steganography_utility.py
-```
+--------------------------------------------------------------------------------------------------------------
 
-### Decrypt using binary image (Option 3)
+## Notes:
 
-This option extracts hidden data from an image using a binary image.
-
-Usage:
-```python
-python steganography_utility.py
-```
-
-### Help (Option 4)
-
-Displays the help page with usage instructions.
-
-Usage:
-```python
-python steganography_utility.py
-```
-
-## Additional Notes
-
-- Ensure that the cover file is not smaller than the embedded file.
+- Ensure the cover file is not smaller than the embedded file.
 - If files are in the same directory as the program, you can simply type the file names.
 - Only `.wav` audio files can be used to embed files into audio.
 
-## Authors
+--------------------------------------------------------------------------------------------------------------
 
-This utility was created by [goslar61](https://github.com/goslar61). If you have any questions or suggestions, feel free to reach out.
-## Additional Notes
+## License:
 
-- Ensure that the cover file is not smaller than the embedded file.
-- If files are in the same directory as the program, you can simply type the file names.
-- Only `.wav` audio files can be used to embed files into audio.
+This program is licensed under the MIT License. Feel free to use and modify it according to your needs.
 
-"""this is my first ever python project after 2 weeks of learning
+--------------------------------------------------------------------------------------------------------------
+
+For more information and support, please contact [insert contact information here].
+
+
 
