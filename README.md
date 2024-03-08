@@ -1,6 +1,5 @@
-==============================================================================================================
+
                                           Steganography Utility
-==============================================================================================================
 
 This Python program provides a steganography utility using steghide for hiding data within images. It offers
 various functionalities such as encryption, decryption, and encoding passphrase into binary images.
@@ -44,14 +43,7 @@ If not already installed, the program will attempt to install the required depen
 - Only `.wav` audio files can be used to embed files into audio.
 
 --------------------------------------------------------------------------------------------------------------
-
-## License:
-
-This program is licensed under the MIT License. Feel free to use and modify it according to your needs.
-
---------------------------------------------------------------------------------------------------------------
-
-For more information and support, please contact [insert contact information here].
+For more information and support, please contact https://github.com/scott-mescudi
 
 
 
