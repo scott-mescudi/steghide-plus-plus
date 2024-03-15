@@ -16,9 +16,9 @@ def print_binary_image(image_path, data_file_path, passphrase):
       str = passphrase
       res = ''.join(format(ord(i), '08b') for i in str)
       #image will have max 108 characters on it
-      image = Image.open("/media/astr0/COCK/steghide++/black.png") ## enter path you want to use to write text on
+      image = Image.open("black.png") ## enter path you want to use to write text on
       d = ImageDraw.Draw(image)
-      font = ImageFont.truetype("/media/astr0/COCK/steghide++/arial.ttf", 25) ##enter font path you want to use to write text with
+      font = ImageFont.truetype("arial.ttf", 25) ##enter font path you want to use to write text with
       text = res
       textpos = (0, 0)
       text_color = (255, 255, 255) ## enter color you want the text 2 be
@@ -29,7 +29,7 @@ def print_binary_image(image_path, data_file_path, passphrase):
       print(Fore.YELLOW + "image saved under binary_image.png")
     except subprocess.CalledProcessError as e:
       # If the command fails, print the error in red color
-      print(Fore.RED + "Error: file not found")
+      print(Fore.RED, "Error: file not found")
 
    
    
