@@ -1,6 +1,6 @@
 
 
-```markdown
+
 # Steghide++
 
 Steghide++ is a Python utility for performing steganography operations using Steghide. Steghide is a steganography program that is used to hide data in various kinds of image and audio files. This utility provides a user-friendly interface to embed and extract hidden data from images, generate random passwords, and more.
@@ -54,7 +54,7 @@ For more information on steganography and how to use this utility, refer to the 
 If you encounter any issues or have suggestions for improvement, feel free to reach out to the author.
 
 Enjoy using Steghide++ for your steganography needs!
-'''
+
 
 
 
