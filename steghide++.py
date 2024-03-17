@@ -54,6 +54,7 @@ def binary_img_translate(image_path, binary_path):
       try:
           result = subprocess.run(command, capture_output=True, text=True, check=True)
           print(Fore.GREEN + "Success!")
+          print("password is " + Fore.YELLOW + normal)
       except subprocess.CalledProcessError as e:
           print(Fore.RED + "Error:", e)
     except FileNotFoundError:
@@ -235,7 +236,7 @@ def validate_passphrase(prompt):
 
 
 if option == "1":
-    print(Fore.YELLOW + "[1] Encrypt using password --- Uses password instead of binary image.")
+    print("You chose: " + Fore.YELLOW + "[1] Encrypt using password --- Uses password instead of binary image.\n")
     image_path = validate_image_path("Enter the path to the image file: ")
     data_file_path = validate_file_path("Enter the path to the data file: ")
     passphrase = input("Enter the passphrase (optional): ")
@@ -243,14 +244,14 @@ if option == "1":
 
 
 elif option == "2":
-    print(Fore.YELLOW + "[2] Decrypt using password --- Uses password instead of binary image.")
+    print("You chose: " + Fore.YELLOW + "[2] Decrypt using password --- Uses password instead of binary image.\n")
     image_path = validate_image_path("Enter the path to the image file: ")
     passphrase = input("Enter the passphrase: ")
     extract_data_with_steghide(image_path, passphrase)
 
 
 elif option == "3":
-    print(Fore.YELLOW + "[3] Encrypt and print binary image --- Encrypts cover file and prints passphrase in a binary image.")
+    print("You chose: " + Fore.YELLOW + "[3] Encrypt and print binary image --- Encrypts cover file and prints passphrase in a binary image.\n")
     image_path = validate_image_path("Enter the path to the image file: ")
     data_file_path = validate_file_path("Enter the path to the data file: ")
     passphrase = validate_passphrase("Enter the passphrase (Max 10 characters): ")
@@ -258,14 +259,14 @@ elif option == "3":
 
 
 elif option == "4":
-    print(Fore.YELLOW + "[4] Decrypt using binary image --- Takes binary image and decrypts cover file.")
+    print("You chose: " + Fore.YELLOW + "[4] Decrypt using binary image --- Takes binary image and decrypts cover file.\n")
     image_path = validate_image_path("Enter the path to the image file: ")
     binary_path = validate_file_path("Enter the path to the binary image: ")
     binary_img_translate(image_path, binary_path)
 
 
 elif option == "5":
-    print(Fore.YELLOW + "[5] Generate a random password --- Generate a variable length password with ASCII characters.")
+    print("You chose: " + Fore.YELLOW + "[5] Generate a random password --- Generate a variable length password with ASCII characters.\n")
     password_gen()
 
 elif option == "6":
