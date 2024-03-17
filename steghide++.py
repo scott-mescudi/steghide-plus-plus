@@ -1,8 +1,10 @@
-#made by goslar61
+#made by goslar61 aka scott-mescudi
 import subprocess
 from colorama import init, Fore
 import time
 import os
+
+
 # Initialize colorama
 init(autoreset=True)
 
@@ -29,14 +31,11 @@ def print_binary_image(image_path, data_file_path, passphrase):
       print(Fore.YELLOW + "image saved under binary_image.png")
     except subprocess.CalledProcessError as e:
       # If the command fails, print the error in red color
-      print(Fore.RED, "Error: file not found")
-
-   
-   
+      print(Fore.RED ,"Error: file not found")
 
 
 def binary_img_translate(image_path, binary_path):
-    from PIL import Image, ImageDraw, ImageFont
+    from PIL import Image
     import pytesseract
     try:
       image = Image.open(binary_path)
@@ -44,59 +43,42 @@ def binary_img_translate(image_path, binary_path):
       binary = text
       normal = ""
       
-      # Split the binary string into chunks of 8 characters
       for chunk in [binary[i:i+8] for i in range(0, len(binary), 8)]:
           try:
-              # Convert each chunk to an integer and then to a character
               normal += chr(int(chunk, 2))
           except ValueError:
-              # Handle non-convertible chunks gracefully (you can add your own error handling logic here)
               pass
       
       command = ["steghide", "extract", "-sf", image_path, "-p", normal]
 
       try:
-          # Execute the command
           result = subprocess.run(command, capture_output=True, text=True, check=True)
-          # If the command runs successfully, print the output in green color
           print(Fore.GREEN + "Success!")
       except subprocess.CalledProcessError as e:
-          # If the command fails, print the error in red color
           print(Fore.RED + "Error:", e)
     except FileNotFoundError:
         print(Fore.RED + "Error: file not found")
 
 
-
-    
-
-
-
 def embed_data_with_steghide(image_path, data_file_path, passphrase):
-    # Construct the steghide command
     command = ["steghide", "embed", "-cf", image_path, "-ef", data_file_path, "-p", passphrase]
 
     try:
-        # Execute the command
         result = subprocess.run(command, capture_output=True, text=True, check=True)
-        # If the command runs successfully, print the output in green color
         print(Fore.GREEN + "Success!")
     except subprocess.CalledProcessError as e:
-        # If the command fails, print the error in red color
         print(Fore.RED + "Error: file not found")
 
+
 def extract_data_with_steghide(image_path, passphrase):
-    # Construct the steghide command
     command = ["steghide", "extract", "-sf", image_path, "-p", passphrase]
 
     try:
-        # Execute the command
         result = subprocess.run(command, capture_output=True, text=True, check=True)
-        # Print the extracted file location in green color
         print(Fore.GREEN + "Success!")
     except subprocess.CalledProcessError as e:
-        # If the command fails, print the error in red color
         print(Fore.RED + "Error: file not found")
+
 
 def password_gen():
   import random
@@ -121,6 +103,7 @@ def password_gen():
       print(Fore.RED + "please enter a number ")
       time.sleep(1)
       password_gen()
+
 
 def help_page():
     print(Fore.CYAN + """
